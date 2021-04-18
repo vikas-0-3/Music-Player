@@ -1,0 +1,153 @@
+{% load static %}
+{% include 'header.html' %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Music Player</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <span class="navbar-text">
+        Profile
+      </span>
+    </div>
+  </nav>
+
+
+
+
+<div class="container-fluid p-3" id="top">
+    <div class="container p-2" id="maincon">
+        <div class="row">
+            <div class="col-sm m-2" id="col1">
+                <img src="{% static 'images/default_music.png' %}" >
+                <br>
+                <br>
+                <center>
+                    <hr>
+                    <h3><b><span id="timer_min">00</span>:<span id="timer_sec">00</span> / <span id="total_time">00:00</span></b></h3>
+                    <progress id="prog" style="width:80%;" value="0" max="100"></progress>
+                    <br>
+                    <div class="container" id="audio_con">
+                        <audio autoplay id="player" src="{% static 'music/hollywood/ALONE.mp3' %}" controls="true" style="display: none;" ontimeupdate="chnge(Math.floor(this.currentTime));" ></audio>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <button type="button" class="btn btn-sm p-3" onclick="backward();"><i class="fas fa-angle-double-left"></i></button>&ensp;
+                        <button type="button" id="play_btn" class="btn btn-sm p-3" onclick="play2();"><i class="fas fa-play"></i></button>
+                        <button type="button" id="pause_btn" style="display: none;" class="btn btn-sm p-3" onclick="pause();"><i class="fas fa-pause"></i></button>
+                        &ensp;<button type="button" class="btn btn-sm p-3" onclick="forward();"><i class="fas fa-angle-double-right"></i></button>&ensp;
+                    </div>
+                    <br>
+                    <h1 id="song_name"> Music</h1>
+                </center>
+            </div>
+
+
+
+
+            <div class="col-sm m-2" id="col2">
+                <div class="sticky-top p-1" style="background-color: black;">
+                    <h2 class="text-center">Playlist</h2>
+                </div>
+                <div class="chip m-2" id="0">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Alone</span>
+                </div>
+                <div class="chip m-2" id="1">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Baby</span>
+                </div>
+                <div class="chip m-2" id="2">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Boyfriend</span>
+                </div>
+                <div class="chip m-2" id="3">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Darkside</span>
+                </div>
+                <div class="chip m-2" id="4">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Despacito</span>
+                </div>
+                <div class="chip m-2" id="5">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Faded</span>
+                </div>
+                <div class="chip m-2" id="6">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Friends</span>
+                </div>
+                <div class="chip m-2" id="7">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Girls Like you</span>
+                </div>
+                <div class="chip m-2" id="8">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Hotline Bling</span>
+                </div>
+                <div class="chip m-2" id="9">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Friends (JB)</span>
+                </div>
+                <div class="chip m-2" id="10">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Let Me Love You</span>
+                </div>
+                <div class="chip m-2" id="11">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Lily</span>
+                </div>
+                <div class="chip m-2" id="12">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Love Me Like You Do</span>
+                </div>
+                <div class="chip m-2" id="13">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Love The Way You Lie</span>
+                </div>
+                <div class="chip m-2" id="14">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Mia</span>
+                </div>
+                <div class="chip m-2" id="15">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Shape OF You</span>
+                </div>
+                <div class="chip m-2" id="16">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Sia</span>
+                </div>
+                <div class="chip m-2" id="17">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Sunflower</span>
+                </div>
+                <div class="chip m-2" id="18">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">Taki Taki</span>
+                </div>
+                <div class="chip m-2" id="19">
+                    <img src="{% static 'images/song_def.png' %}" alt="Person" width="96" height="96">
+                    <span class="text">What Do you Mean</span>
+                </div>
+    
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 
+
+
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+
+
+
+
+
+{% include 'footer.html' %}

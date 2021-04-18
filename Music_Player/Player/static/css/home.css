@@ -1,0 +1,66 @@
+h1 {
+    color: blue;
+}
+h3 {
+    color: white;
+}
+#maincon {
+    background-color: black;
+}
+
+#col1 {
+    padding: 0;
+}
+#col1 img {
+    width: 100%;
+    height: auto;
+}
+#col2{
+    color: white;
+    height: 80vh;
+    overflow-y: scroll;
+}
+#col2::-webkit-scrollbar {
+    width: 12px;
+}
+
+#col2::-webkit-scrollbar-track { 
+    border-radius: 10px;
+}
+
+  #col2::-webkit-scrollbar-thumb {
+    background: blueviolet; 
+    border-radius: 10px;
+  }
+  #col2::-webkit-scrollbar-thumb:hover {
+    background: blue; 
+  }
+
+
+#top {
+    background-color: blueviolet;
+    height: fit-content;
+}
+.chip {
+    display: block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    color: black;
+    cursor: pointer;
+  }
+  .chip:hover {
+      background-color: black;
+      color: white;
+  }
+  
+  .chip img {
+    float: left;
+    margin: 0 12px 0 -26px;
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+  }
