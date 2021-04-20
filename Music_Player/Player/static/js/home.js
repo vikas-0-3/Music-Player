@@ -10,11 +10,9 @@ var myFunction = function() {
     play(this.id)
 };
 
-
 var pl = document.getElementById("player");
 pl.onended = function() {
     current_number = parseInt(current_number)+1;
-
     if(current_number > song_array.length-1){
         current_number = 0;
         console.log(current_number);
@@ -23,11 +21,16 @@ pl.onended = function() {
     else {
         play(current_number);
     }
-    
 };
 
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click', myFunction, false);
+}
+
+
+function move(cv) {
+    console.log(cv);
+    document.getElementById("player").currentTime = cv;
 }
 
 function changestyle(x) {
@@ -65,6 +68,8 @@ function play(x) {
     }
     changestyle(x);
 }
+
+
 
 function chnge(tme) {
     document.getElementById("timer_min").innerHTML = parseInt(tme/60);

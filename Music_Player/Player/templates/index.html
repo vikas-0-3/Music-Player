@@ -28,7 +28,9 @@
                 <center>
                     <hr>
                     <h3><b><span id="timer_min">00</span>:<span id="timer_sec">00</span> / <span id="total_time">00:00</span></b></h3>
-                    <progress id="prog" style="width:80%;" value="0" max="100"></progress>
+
+                        <input type="range" oninput="move(this.value)" id="prog" style="width:80%;" min="1" max="100" value="0" class="slider">
+
                     <br>
                     <div class="container" id="audio_con">
                         <audio autoplay id="player" src="{% static 'music/hollywood/ALONE.mp3' %}" controls="true" style="display: none;" ontimeupdate="chnge(Math.floor(this.currentTime));" ></audio>
